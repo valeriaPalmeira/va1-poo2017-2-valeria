@@ -15,12 +15,15 @@ public class Operacoes {
 	 * lance a 'EvolucaoException'. Se estiver com pelo
 	 * menos o mínimo de CP, setar 1 no CP deste pokemon.
 	 */
-	public boolean evoluir(Pokemon p) throws EvolucaoException {
-		Double c = Math.random()*100+10;
-		if(c < 50){
+	public void evoluir(Pokemon p) throws EvolucaoException {
+		
+		if(p.getCp() >= 50){
+			p.setCp(20L);
+		}else{
+			throw new EvolucaoException(p);
 		}
-		return true;
 	}
+	
 	
 	public Pokemon maiorCp(List<Pokemon> listaPokemons) {
 		Pokemon pokemonMaiorCp = listaPokemons.get(0);

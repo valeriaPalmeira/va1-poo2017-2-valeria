@@ -8,6 +8,7 @@ public class EvolucaoException extends Exception {
 	
 	private Pokemon p;
 	
+	
 	public EvolucaoException(Pokemon p) {
 		super();
 		this.p = p;
